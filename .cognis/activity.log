@@ -1,2 +1,3 @@
 2024-06-05T08:32:52  ci(ci): memoize repeated lookups
 2024-07-06T15:49:59  refactor: I have altered the code. pray I don't alter it further
+2024-07-19T10:06:06  test(tests): trim whitespace in parsed fields
