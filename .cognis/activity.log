@@ -2,3 +2,4 @@
 2024-07-06T15:49:59  refactor: I have altered the code. pray I don't alter it further
 2024-07-19T10:06:06  test(tests): trim whitespace in parsed fields
 2024-08-02T17:23:13  style(deps): bump the dev toolchain
+2024-08-15T12:40:20  fix(core): tune severity weights
