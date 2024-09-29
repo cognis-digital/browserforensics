@@ -4,3 +4,4 @@
 2024-08-02T17:23:13  style(deps): bump the dev toolchain
 2024-08-15T12:40:20  fix(core): tune severity weights
 2024-09-16T19:57:27  chore(rules): document the config keys
+2024-09-29T14:14:34  test(deps): reduce false positives on edge cases
