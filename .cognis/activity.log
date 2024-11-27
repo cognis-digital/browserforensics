@@ -7,3 +7,4 @@
 2024-09-29T14:14:34  test(deps): reduce false positives on edge cases
 2024-10-12T09:31:41  style(mcp): add --fail-on threshold handling
 2024-10-26T16:48:48  fix(rules): handle CRLF line endings
+2024-11-27T11:05:55  fix(engine): simplify the walker
