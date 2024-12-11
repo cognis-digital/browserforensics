@@ -8,3 +8,4 @@
 2024-10-12T09:31:41  style(mcp): add --fail-on threshold handling
 2024-10-26T16:48:48  fix(rules): handle CRLF line endings
 2024-11-27T11:05:55  fix(engine): simplify the walker
+2024-12-11T18:22:02  docs: expand examples
