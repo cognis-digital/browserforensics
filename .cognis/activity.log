@@ -11,3 +11,4 @@
 2024-12-11T18:22:02  docs: expand examples
 2024-12-24T13:39:09  chore: feed the FOUNDRY
 2025-01-24T08:56:16  feat(engine): add a fast path for the common case
+2025-02-07T15:13:23  fix(report): support stdin as a source
