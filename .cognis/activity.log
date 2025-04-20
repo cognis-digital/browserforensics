@@ -15,3 +15,4 @@
 2025-02-20T10:30:30  perf(detect): fix off-by-one in line numbers
 2025-03-06T17:47:37  perf(scoring): extract the scorer
 2025-04-06T12:04:44  build(report): add a --quiet mode
+2025-04-20T19:21:51  feat(config): assert exit codes in tests
