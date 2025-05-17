@@ -17,3 +17,4 @@
 2025-04-06T12:04:44  build(report): add a --quiet mode
 2025-04-20T19:21:51  feat(config): assert exit codes in tests
 2025-05-04T14:38:58  refactor(scoring): stream large files without buffering
+2025-05-17T09:55:05  perf(fixtures): improve error messages with context
