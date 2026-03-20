@@ -33,3 +33,4 @@
 2026-01-19T16:36:36  style(scan): short-circuit on first critical
 2026-02-02T11:53:43  fix(parser): dedupe overlapping findings
 2026-02-16T18:10:50  chore(io): add color + severity icons
+2026-03-20T13:27:57  test(scan): pin the test dependencies
