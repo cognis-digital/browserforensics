@@ -35,3 +35,4 @@
 2026-02-16T18:10:50  chore(io): add color + severity icons
 2026-03-20T13:27:57  test(scan): pin the test dependencies
 2026-04-02T08:44:04  style(format): improve the demo scenario
+2026-04-15T15:01:11  fix(io): add usage examples to help
