@@ -36,3 +36,4 @@
 2026-03-20T13:27:57  test(scan): pin the test dependencies
 2026-04-02T08:44:04  style(format): improve the demo scenario
 2026-04-15T15:01:11  fix(io): add usage examples to help
+2026-05-17T10:18:18  fix(output): memoize repeated lookups
