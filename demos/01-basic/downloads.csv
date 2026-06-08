@@ -1,0 +1,6 @@
+url,target_path,received_bytes,start_time,mime_type,danger_type
+https://intranet.corp.example.com/files/q2_report.pdf,C:\Users\jdoe\Downloads\q2_report.pdf,2456789,2026-06-07 09:10:00,application/pdf,not_dangerous
+https://anonfiles.com/x9Z2/invoice.pdf.exe,C:\Users\jdoe\Downloads\invoice.pdf.exe,884512,2026-06-07 22:56:10,application/x-msdownload,dangerous_file
+http://185.220.101.47/payload.bin,C:\Users\jdoe\Downloads\payload.bin,51200,2026-06-07 22:58:44,application/octet-stream,not_dangerous
+https://mirror.example.org/tools/utils.zip,C:\Users\jdoe\Downloads\utils.zip,157286400,2026-06-07 14:02:00,application/zip,not_dangerous
+https://transfer.sh/get/9aQ/backup.7z,C:\Users\jdoe\Downloads\backup.7z,4096000,2026-06-07 23:02:30,application/x-7z-compressed,not_dangerous

@@ -1,0 +1,14 @@
+{
+  "history": [
+    {"url": "https://intranet.corp.example.com/dashboard", "title": "Corp Dashboard", "visit_time": "2026-06-07T08:12:03", "visit_count": 41},
+    {"url": "https://mail.google.com/mail/u/0/", "title": "Inbox - Gmail", "visit_time": "2026-06-07T08:14:55", "visit_count": 120},
+    {"url": "http://185.220.101.47/login.php", "title": "Account Verification", "visit_time": "2026-06-07T22:41:10", "visit_count": 1},
+    {"url": "https://bit.ly/3xKfWqz", "title": "shared file", "visit_time": "2026-06-07T22:43:02", "visit_count": 1},
+    {"url": "https://pastebin.com/raw/aB12cD34", "title": "untitled paste", "visit_time": "2026-06-07T22:50:18", "visit_count": 2},
+    {"url": "https://anonfiles.com/x9Z2/data", "title": "AnonFiles", "visit_time": "2026-06-07T22:55:40", "visit_count": 1},
+    {"url": "https://transfer.sh/get/9aQ/archive", "title": "transfer.sh", "visit_time": "2026-06-07T23:01:09", "visit_count": 1},
+    {"url": "https://update-portal.zip/secure", "title": "Update Portal", "visit_time": "2026-06-07T23:05:33", "visit_count": 1},
+    {"url": "https://track.example.net/beacon?id=QWxhZGRpbjpvcGVuc2VzYW1lQWxhZGRpbjpvcGVuc2VzYW1lQWxhZGRpbjpvcGVuc2VzYW1l", "title": "redirect", "visit_time": "2026-06-07T23:08:00", "visit_count": 1},
+    {"url": "https://news.ycombinator.com/", "title": "Hacker News", "visit_time": "2026-06-07T12:30:00", "visit_count": 8}
+  ]
+}
