@@ -36,9 +36,11 @@ Analyze exported browser history/downloads for IOCs and exfil signs — without 
 <a name="features"></a>
 ## Features
 
-- ✅ Todo
-- ✅ Fixme
-- ✅ Xxx
+- ✅ Load Records
+- ✅ Analyze History
+- ✅ Analyze Downloads
+- ✅ Analyze
+- ✅ Summarize
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
