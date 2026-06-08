@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/browserforensics",
+  "version": "0.2.0",
+  "description": "JavaScript port of browserforensics (Cognis Neural Suite)",
+  "bin": {
+    "browserforensics": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
