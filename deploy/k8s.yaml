@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: browserforensics, labels: { app: browserforensics } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: browserforensics } }
+  template:
+    metadata: { labels: { app: browserforensics } }
+    spec:
+      containers:
+        - name: browserforensics
+          image: ghcr.io/cognis-digital/browserforensics:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: browserforensics }
+spec:
+  selector: { app: browserforensics }
+  ports: [{ port: 80, targetPort: 8000 }]
