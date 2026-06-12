@@ -23,8 +23,8 @@ import json
 import os
 import re
 from dataclasses import dataclass, field, asdict
-from datetime import datetime, time
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from datetime import datetime
+from typing import Any, Dict, Iterable, List, Optional
 from urllib.parse import urlsplit, parse_qsl
 
 

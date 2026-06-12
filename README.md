@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-browserforensics
+pip install "git+https://github.com/cognis-digital/browserforensics.git"
 browserforensics scan .            # → prioritized findings in seconds
 ```
 
@@ -50,7 +50,7 @@ Analyze exported browser history/downloads for IOCs and exfil signs — without 
 ## Quick start
 
 ```bash
-pip install cognis-browserforensics
+pip install "git+https://github.com/cognis-digital/browserforensics.git"
 browserforensics --version
 browserforensics scan .                       # scan current project
 browserforensics scan . --format json         # machine-readable
