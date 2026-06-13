@@ -20,6 +20,31 @@ pip install cognis-browserforensics
 browserforensics scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+`browserforensics` performs defensive IOC / exfil triage on exported browser history and downloads.
+
+1. **Install**:
+   ```bash
+   pip install -e .
+   ```
+2. **Scan** exported history and/or downloads (CSV or JSON):
+   ```bash
+   browserforensics scan --history history.csv --downloads downloads.csv
+   ```
+3. **Write an HTML report** to a file:
+   ```bash
+   browserforensics scan --history history.json --format html -o triage.html
+   ```
+4. **Read the output** as JSON for a SIEM/pipeline:
+   ```bash
+   browserforensics scan --history history.csv --format json -o iocs.json
+   ```
+5. **Automate in CI/IR runbooks** — `--fail-on` sets the severity that triggers a non-zero exit:
+   ```bash
+   browserforensics scan --history history.csv --downloads downloads.csv --fail-on high
+   ```
+
 ## Contents
 
 - [Why browserforensics?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
