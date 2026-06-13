@@ -27,6 +27,9 @@ from datetime import datetime
 from typing import Any, Dict, Iterable, List, Optional
 from urllib.parse import urlsplit, parse_qsl
 
+TOOL_NAME = "BROWSERFORENSICS"
+TOOL_VERSION = "0.1.0"
+
 
 class Severity:
     INFO = "info"

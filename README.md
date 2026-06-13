@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/browserforensics.git"
 browserforensics scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+browserforensics lets you take the export files that Chrome, Firefox, or Edge can produce — your browsing history and download logs — and scan them for red flags without sending anything to the cloud. It checks for things like files downloaded from sketchy file-sharing sites, executables disguised as documents, downloads flagged as dangerous by the browser itself, and visits to raw IP addresses instead of real domain names. The results are printed as a plain table, or exported as JSON or an HTML report you can share with your team. It is aimed at IT admins, incident responders, and security-conscious individuals who need a quick, offline first-pass triage of a suspect machine's browser activity.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why browserforensics?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -47,6 +53,42 @@ Analyze exported browser history/downloads for IOCs and exfil signs — without 
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`browserforensics` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/browserforensics/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/browserforensics/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/browserforensics.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/browserforensics.git"  # uv
+pip install "git+https://github.com/cognis-digital/browserforensics.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/browserforensics.git
+cd browserforensics && pip install .
+```
+
+Then run:
+```sh
+browserforensics --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
