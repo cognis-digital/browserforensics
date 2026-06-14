@@ -34,3 +34,6 @@ browserforensics = "browserforensics.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["browserforensics"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
