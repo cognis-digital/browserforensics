@@ -185,13 +185,30 @@ def _detect_payload(data: Any, kind: str) -> List[Dict[str, Any]]:
     return []
 
 
+_VALID_KINDS = frozenset({"history", "downloads"})
+
+
 def load_records(path: str, kind: str) -> List[Dict[str, Any]]:
     """Load + normalize records from a JSON or CSV export.
 
     kind: "history" or "downloads".
+
+    Raises:
+        ValueError: if *kind* is not recognised or the file is completely
+            unparseable (neither valid JSON nor a CSV with a header row).
+        OSError: propagated from the underlying file open.
     """
+    if kind not in _VALID_KINDS:
+        raise ValueError(
+            f"Unknown kind {kind!r}; expected one of {sorted(_VALID_KINDS)}"
+        )
+
     with open(path, "r", encoding="utf-8", errors="replace") as fh:
         raw = fh.read()
+
+    if not raw.strip():
+        # Empty file — return no records rather than crashing.
+        return []
 
     aliases = _HISTORY_ALIASES if kind == "history" else _DOWNLOAD_ALIASES
     stripped = raw.lstrip()
@@ -200,9 +217,24 @@ def load_records(path: str, kind: str) -> List[Dict[str, Any]]:
         try:
             rows = _detect_payload(json.loads(raw), kind)
         except json.JSONDecodeError:
-            rows = list(csv.DictReader(io.StringIO(raw)))
+            # JSON-like bytes that are actually malformed — try CSV before
+            # giving up so partial / mis-detected exports still work.
+            reader = csv.DictReader(io.StringIO(raw))
+            try:
+                rows = list(reader)
+            except csv.Error as exc:
+                raise ValueError(
+                    f"Cannot parse {path!r} as JSON or CSV: {exc}"
+                ) from exc
     else:
-        rows = list(csv.DictReader(io.StringIO(raw)))
+        reader = csv.DictReader(io.StringIO(raw))
+        try:
+            rows = list(reader)
+        except csv.Error as exc:
+            raise ValueError(
+                f"Cannot parse {path!r} as CSV: {exc}"
+            ) from exc
+
     return [_normalize_keys(r, aliases) for r in rows]
 
 
@@ -408,6 +440,14 @@ def analyze_downloads(records: Iterable[Dict[str, Any]]) -> List[Finding]:
 
 def analyze(history_path: Optional[str] = None,
             downloads_path: Optional[str] = None) -> List[Finding]:
+    """Analyze browser history and/or downloads exports.
+
+    Raises:
+        ValueError: if neither path is supplied, or if a path cannot be parsed.
+        OSError / FileNotFoundError: if a supplied path cannot be opened.
+    """
+    if not history_path and not downloads_path:
+        raise ValueError("At least one of history_path or downloads_path must be provided.")
     findings: List[Finding] = []
     if history_path:
         findings += analyze_history(load_records(history_path, "history"))

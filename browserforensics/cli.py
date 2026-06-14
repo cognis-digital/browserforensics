@@ -167,10 +167,24 @@ def main(argv: Optional[List[str]] = None) -> int:
         sys.stderr.write("error: provide --history and/or --downloads\n")
         return 2
 
+    # Validate that supplied paths actually exist before attempting to parse
+    # them, so the error message is always actionable.
+    import os as _os
+    for flag, path in (("--history", args.history), ("--downloads", args.downloads)):
+        if path and not _os.path.exists(path):
+            sys.stderr.write(f"error: {flag} file not found: {path!r}\n")
+            return 2
+        if path and not _os.path.isfile(path):
+            sys.stderr.write(f"error: {flag} path is not a regular file: {path!r}\n")
+            return 2
+
     try:
         findings = analyze(args.history, args.downloads)
     except FileNotFoundError as e:
         sys.stderr.write(f"error: file not found: {e.filename}\n")
+        return 2
+    except ValueError as e:
+        sys.stderr.write(f"error: {e}\n")
         return 2
     except OSError as e:
         sys.stderr.write(f"error: {e}\n")
