@@ -27,6 +27,28 @@ from datetime import datetime, time
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urlsplit, parse_qsl
 
+TOOL_NAME = "BROWSERFORENSICS"
+
+
+def _read_version() -> str:
+    """Read the tool version from the repo VERSION file, with a safe fallback."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    for candidate in (
+        os.path.join(here, os.pardir, "VERSION"),
+        os.path.join(here, "VERSION"),
+    ):
+        try:
+            with open(candidate, "r", encoding="utf-8") as fh:
+                v = fh.read().strip()
+            if v:
+                return v
+        except OSError:
+            continue
+    return "0.3.6"
+
+
+TOOL_VERSION = _read_version()
+
 
 class Severity:
     INFO = "info"

@@ -1,0 +1,6 @@
+url,filename,size,time,mimetype,danger_type
+https://releases.mozilla.org/firefox/setup.exe,C:\Users\analyst\Downloads\setup.exe,58720256,2026-06-16 09:01:00,application/x-msdownload,not_dangerous
+https://updates.example.org/agent/installer.msi,C:\Users\analyst\Downloads\installer.msi,12582912,2026-06-16 09:05:12,application/x-msi,not_dangerous
+https://gofile.io/d/Kp3xQ/keylogger_build.exe,C:\Users\analyst\Downloads\keylogger_build.exe,742400,2026-06-16 23:41:55,application/x-msdownload,dangerous_file
+https://cdn.example.com/report/q2.pdf,C:\Users\analyst\Downloads\q2.pdf,1843200,2026-06-16 10:22:30,application/pdf,not_dangerous
+https://mega.nz/file/abc123/dump.7z,C:\Users\analyst\Downloads\dump.7z,9437184,2026-06-16 23:48:10,application/x-7z-compressed,not_dangerous

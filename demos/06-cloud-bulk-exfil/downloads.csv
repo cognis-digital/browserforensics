@@ -1,0 +1,4 @@
+url,target_path,received_bytes,start_time,mime_type,danger_type
+https://crm.corp.example.com/customers/export?range=all,C:\Users\sales\Downloads\customer_dump.csv,524288000,2026-06-19 18:10:00,text/csv,not_dangerous
+https://crm.corp.example.com/reports/payroll_2026.csv,C:\Users\sales\Downloads\payroll_2026.csv,15728640,2026-06-19 18:06:00,text/csv,not_dangerous
+https://vault.corp.example.com/secret/db_credential_backup.zip,C:\Users\sales\Downloads\db_credential_backup.zip,209715200,2026-06-19 19:16:00,application/zip,not_dangerous

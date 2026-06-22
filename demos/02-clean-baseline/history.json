@@ -1,0 +1,12 @@
+{
+  "history": [
+    {"url": "https://intranet.corp.example.com/dashboard", "title": "Corp Dashboard", "visit_time": "2026-06-15T08:02:11", "visit_count": 58},
+    {"url": "https://mail.google.com/mail/u/0/", "title": "Inbox - Gmail", "visit_time": "2026-06-15T08:05:40", "visit_count": 211},
+    {"url": "https://github.com/cognis-digital/browserforensics", "title": "browserforensics", "visit_time": "2026-06-15T09:31:02", "visit_count": 12},
+    {"url": "https://news.ycombinator.com/", "title": "Hacker News", "visit_time": "2026-06-15T12:18:55", "visit_count": 9},
+    {"url": "https://en.wikipedia.org/wiki/Digital_forensics", "title": "Digital forensics - Wikipedia", "visit_time": "2026-06-15T13:44:00", "visit_count": 3},
+    {"url": "https://stackoverflow.com/questions/tagged/python", "title": "Python questions - Stack Overflow", "visit_time": "2026-06-15T14:10:21", "visit_count": 27},
+    {"url": "https://docs.python.org/3/library/csv.html", "title": "csv - Python docs", "visit_time": "2026-06-15T14:22:08", "visit_count": 5},
+    {"url": "https://www.bbc.com/news", "title": "BBC News", "visit_time": "2026-06-15T17:50:33", "visit_count": 14}
+  ]
+}

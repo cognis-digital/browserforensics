@@ -1,0 +1,6 @@
+[
+  {"url": "https://0x0.st/aBcD.sh", "target_path": "/home/dev/Downloads/aBcD.sh", "received_bytes": 4096, "start_time": "2026-06-20T23:11:00", "mime_type": "application/x-sh", "danger_type": "not_dangerous"},
+  {"url": "http://104.21.5.99/loader", "target_path": "/home/dev/Downloads/loader", "received_bytes": 81920, "start_time": "2026-06-20T23:14:30", "mime_type": "application/octet-stream", "danger_type": "not_dangerous"},
+  {"url": "https://catbox.moe/c/abc123.py", "target_path": "/home/dev/Downloads/stage2.py", "received_bytes": 12288, "start_time": "2026-06-20T23:18:05", "mime_type": "text/x-python", "danger_type": "not_dangerous"},
+  {"url": "https://pypi.org/packages/requests.whl", "target_path": "/home/dev/Downloads/requests.whl", "received_bytes": 102400, "start_time": "2026-06-20T22:00:00", "mime_type": "application/octet-stream", "danger_type": "not_dangerous"}
+]

@@ -44,10 +44,18 @@ browserforensics scan .            # → prioritized findings in seconds
    ```bash
    browserforensics scan --history history.csv --downloads downloads.csv --fail-on high
    ```
+6. **Emit SARIF** for GitHub code-scanning / IDE viewers:
+   ```bash
+   browserforensics scan --downloads downloads.csv --format sarif -o triage.sarif
+   ```
+
+### Output formats
+
+`--format table` (default) · `json` (SIEM/pipelines) · `html` (shareable report) · `sarif` (SARIF 2.1.0 for GitHub code-scanning and IDE viewers).
 
 ## Contents
 
-- [Why browserforensics?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
+- [Why browserforensics?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Demos](#demos) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
 
 <a name="why"></a>
 ## Why browserforensics?
@@ -61,11 +69,11 @@ Analyze exported browser history/downloads for IOCs and exfil signs — without 
 <a name="features"></a>
 ## Features
 
-- ✅ Load Records
-- ✅ Analyze History
-- ✅ Analyze Downloads
-- ✅ Analyze
-- ✅ Summarize
+- ✅ Parse Chrome/Firefox **history & downloads** exports (CSV or JSON, auto-detected, column-alias tolerant)
+- ✅ ~15 IOC / exfil heuristics: raw-IP hosts, anonymous file-shares, URL shorteners, abused TLDs, double-extension lures, browser-flagged downloads, encoded-query beacons, bulk-transfer & multi-exfil patterns
+- ✅ Output as **table · JSON · HTML report · SARIF 2.1.0**
+- ✅ `--fail-on <severity>` CI gate with non-zero exit codes
+- ✅ 8 verified real-use-case [demos](#demos)
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
@@ -94,6 +102,41 @@ $ browserforensics scan .
 
   2 findings · risk score 5 · 38ms
 ```
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+<a name="demos"></a>
+## Demos — real-use-case scenarios
+
+Each folder under [`demos/`](demos/) is a self-contained scenario: a realistic
+input file **in the tool's real export format** (Chrome/Firefox history &
+downloads, CSV or JSON) plus a `SCENARIO.md` narrative — where the data came
+from, the exact command to run, what to expect, and how to act. Every demo is
+verified in CI to actually produce (or, for the clean baseline, *not* produce)
+the findings it documents.
+
+| Demo | Format | Scenario | Key rules exercised |
+|---|---|---|---|
+| [`01-basic`](demos/01-basic/) | JSON + CSV | Suspected workstation compromise (mixed IOCs) | many |
+| [`02-clean-baseline`](demos/02-clean-baseline/) | JSON | Known-good profile — **zero findings, exit 0** | *(none)* |
+| [`03-firefox-csv`](demos/03-firefox-csv/) | CSV (Firefox column names) | Payload hidden among real installers | `download.executable`, `download.from_exfil_host`, `download.browser_flagged` |
+| [`04-double-extension-lure`](demos/04-double-extension-lure/) | CSV | Phishing double-extension lures (`invoice.pdf.exe`) | `download.double_extension` |
+| [`05-c2-beacon-history`](demos/05-c2-beacon-history/) | JSON | C2 beaconing to a raw-IP `gate.php` | `history.ip_literal_host`, `history.encoded_query`, `history.suspicious_tld` |
+| [`06-cloud-bulk-exfil`](demos/06-cloud-bulk-exfil/) | JSON + CSV | Insider bulk export to anonymous file-shares | `history.multi_exfil_pattern`, `download.large_transfer`, `history.sensitive_keyword` |
+| [`07-malvertising-shortener`](demos/07-malvertising-shortener/) | CSV | Malvertising shortener → abused-TLD → raw-IP chain | `history.url_shortener`, `history.suspicious_tld`, `history.ip_literal_host` |
+| [`08-zip-tld-phish`](demos/08-zip-tld-phish/) | JSON | `.zip` / `.mov` TLD confusion trick | `history.suspicious_tld` |
+| [`09-flat-json-array`](demos/09-flat-json-array/) | JSON (flat array) | Linux dev box, staged dropper → loader → stage2 | `download.executable`, `download.from_exfil_host`, `download.from_ip` |
+
+```bash
+# e.g. run the insider-exfil scenario across both artifacts
+python -m browserforensics scan \
+    --history demos/06-cloud-bulk-exfil/history.json \
+    --downloads demos/06-cloud-bulk-exfil/downloads.csv
+```
+
+> All indicators in the demos are synthetic-but-plausible (documented IP ranges,
+> known abused TLDs, public file-share hostnames). No real malware hashes, CVEs,
+> or fingerprints are fabricated.
 
 <div align="right"><a href="#top">↑ back to top</a></div>
 

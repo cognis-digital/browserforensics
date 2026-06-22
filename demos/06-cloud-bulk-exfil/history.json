@@ -1,0 +1,10 @@
+{
+  "history": [
+    {"url": "https://crm.corp.example.com/customers/export?range=all", "title": "Customer Export", "visit_time": "2026-06-19T18:02:00", "visit_count": 2},
+    {"url": "https://crm.corp.example.com/reports/payroll_2026.csv", "title": "Payroll 2026", "visit_time": "2026-06-19T18:05:30", "visit_count": 1},
+    {"url": "https://file.io/", "title": "file.io - upload", "visit_time": "2026-06-19T18:40:11", "visit_count": 3},
+    {"url": "https://transfer.sh/", "title": "transfer.sh", "visit_time": "2026-06-19T18:52:44", "visit_count": 2},
+    {"url": "https://wetransfer.com/", "title": "WeTransfer", "visit_time": "2026-06-19T19:03:20", "visit_count": 1},
+    {"url": "https://vault.corp.example.com/secret/db_credential_backup", "title": "Credential Backup", "visit_time": "2026-06-19T19:15:00", "visit_count": 1}
+  ]
+}

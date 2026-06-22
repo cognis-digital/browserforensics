@@ -1,0 +1,10 @@
+{
+  "history": [
+    {"url": "https://intranet.corp.example.com/", "title": "Intranet", "visit_time": "2026-06-18T08:00:00", "visit_count": 33},
+    {"url": "http://193.42.33.18/gate.php?id=U2FsdGVkX1+9dGhpc2lzYWxvbmdiYXNlNjRsb29raW5nYmVhY29ucGF5bG9hZHN0cmluZ3h4eHg=", "title": "", "visit_time": "2026-06-18T08:15:04", "visit_count": 1},
+    {"url": "http://193.42.33.18/gate.php?id=U2FsdGVkX19hbm90aGVyYmVhY29uY2hlY2tpbmZyZXNoZGF0YWV4ZmlsdHJhdGVkbm93eHl6", "title": "", "visit_time": "2026-06-18T08:25:07", "visit_count": 1},
+    {"url": "http://193.42.33.18/gate.php?id=U2FsdGVkX1+0aGlyZGJlYWNvbnBpbmdiYWNraG9tZXRvY29tbWFuZGFuZGNvbnRyb2x4eA==", "title": "", "visit_time": "2026-06-18T08:35:11", "visit_count": 1},
+    {"url": "https://cdn-update.work/jquery.min.js?v=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJleGZpbCI6dHJ1ZX1zaWduYXR1cmVibG9iaGVyZXh4", "title": "Update", "visit_time": "2026-06-18T08:40:00", "visit_count": 4},
+    {"url": "https://news.ycombinator.com/", "title": "Hacker News", "visit_time": "2026-06-18T12:00:00", "visit_count": 6}
+  ]
+}

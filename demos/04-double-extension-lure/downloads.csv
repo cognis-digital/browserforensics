@@ -1,0 +1,6 @@
+url,target_path,received_bytes,start_time,mime_type,danger_type
+https://webmail.example.com/attachment/Invoice_4471.pdf.exe,C:\Users\finance\Downloads\Invoice_4471.pdf.exe,612352,2026-06-17 11:14:02,application/x-msdownload,not_dangerous
+https://docs.example.org/shared/Resume_Candidate.docx.scr,C:\Users\finance\Downloads\Resume_Candidate.docx.scr,488448,2026-06-17 11:31:40,application/octet-stream,not_dangerous
+https://share.example.net/Q3_Forecast.xlsx.js,C:\Users\finance\Downloads\Q3_Forecast.xlsx.js,20480,2026-06-17 12:02:18,text/javascript,not_dangerous
+https://cdn.example.com/photos/holiday.jpg,C:\Users\finance\Downloads\holiday.jpg,2457600,2026-06-17 13:45:00,image/jpeg,not_dangerous
+https://intranet.corp.example.com/policy.pdf,C:\Users\finance\Downloads\policy.pdf,184320,2026-06-17 14:10:00,application/pdf,not_dangerous
