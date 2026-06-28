@@ -1,0 +1,13 @@
+$ browserforensics-emit --help
+
+usage: browserforensics [-h] [--version] {scan} ...
+
+BROWSERFORENSICS - defensive browser history/downloads IOC & exfil triage.
+
+positional arguments:
+  {scan}
+    scan      Analyze exported history/downloads.
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit

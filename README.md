@@ -20,6 +20,65 @@ pip install cognis-browserforensics
 browserforensics scan .            # → prioritized findings in seconds
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ browserforensics-emit --version
+BROWSERFORENSICS 0.3.6
+```
+
+```console
+$ browserforensics-emit --help
+usage: browserforensics [-h] [--version] {scan} ...
+
+BROWSERFORENSICS - defensive browser history/downloads IOC & exfil triage.
+
+positional arguments:
+  {scan}
+    scan      Analyze exported history/downloads.
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+```
+
+> Blocks above are real `browserforensics` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"incident": {
+"id": "123456789",
+"name": "Example Incident"
+},
+"findings": [
+{
+"category": "network",
+"description": "Suspicious DNS query from 192.168.1.100 to 8.8.8.8",
+"created_at": "2023-02-15T14:30:00Z",
+"updated_at": "2023-02-15T14:30:01Z",
+"id": "123456789-001",
+"severity": "medium"
+},
+{
+"category": "process",
+"description": "New process created on 192.168.1.100 with command 'calc.exe'",
+"created_at": "2023-02-15T14:31:00Z",
+"updated_at": "2023-02-15T14:31:01Z",
+"id": "123456789-002",
+"severity": "high"
+}
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 `browserforensics` performs defensive IOC / exfil triage on exported browser history and downloads.

@@ -1,0 +1,3 @@
+$ browserforensics-emit --version
+
+BROWSERFORENSICS 0.3.6
